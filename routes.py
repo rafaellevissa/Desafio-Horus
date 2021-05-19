@@ -16,9 +16,9 @@ def set_contacts():
 def update_contact(id = 0):
     return ContactsController.update_user(id)
 
-@router.route('/contact/delete/<id>', methods=['POST'])
-def delete_user(id = 0):
-    return ContactsController.delete_user(id)
+@router.route('/contact/delete/<id>', methods=['GET'])
+def delete_contact(id = 0):
+    return ContactsController.delete_contact(id)
 
 @router.route('/', methods=['GET'])
 def index():

@@ -12,6 +12,5 @@ class Database:
     def connect(self) -> mysql.connector:
         return self.database.cursor()
 
-    def disconnect(self, cursor) -> any:
-        cursor.close()
-        self.database.close()
+    def commit(self) -> mysql:
+        return self.database.commit()

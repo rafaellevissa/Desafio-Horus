@@ -77,11 +77,11 @@ class ContactsController:
 
             return Response(json.dumps(error_response), status=401, mimetype='application/json')
 
-    def delete_user(id: int) -> Response:
+    def delete_contact(id: int) -> Response:
         if int(id) != 0:
             get_status_contact = ContactsModel.get_contact_by_id(id)
 
-            if get_status_contact[0]['status'] == '1':
+            if get_status_contact[0][3] == '1':
                 ContactsModel.delete_contact(id)
 
                 message = {'message': 'Deleted user'}
