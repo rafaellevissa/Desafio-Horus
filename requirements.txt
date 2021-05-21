@@ -10,3 +10,5 @@ PyMySQL==1.0.2
 pytz==2021.1
 six==1.16.0
 Werkzeug==2.0.1
+mysql-connector-python==8.0.25
+flask-cors==3.0.10
