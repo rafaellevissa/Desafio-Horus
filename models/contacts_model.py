@@ -4,7 +4,7 @@ instance = Database()
 
 class ContactsModel:
     def get_contacts() -> dict:
-        query = 'SELECT name, phone FROM contacts WHERE status = "1"'
+        query = 'SELECT id, name, phone FROM contacts WHERE status = "1"'
 
         cursor = instance.connect()
 

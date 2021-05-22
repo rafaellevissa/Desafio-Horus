@@ -9,9 +9,11 @@ class ContactsController:
         datas = []
 
         for index in range(len(contacts)):
-            name = contacts[index][0]
-            phone = contacts[index][1]
+            id = contacts[index][0]
+            name = contacts[index][1]
+            phone = contacts[index][2]
             data = {
+                'id': id,
                 'name': name,
                 'phone': phone
             }
