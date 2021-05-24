@@ -48,3 +48,131 @@ docker-composer up -d
 ```
 
 That's all that you need 🎉!
+
+## 🛣️ Routes
+
+### Contacts
+
+Description:
+
+A array with all of the contacts
+
+Request:
+
+```
+Get /contacts
+```
+Responses:
+
+```
+200 - OK.
+500 - Server Error.
+```
+
+If everything goes right the server will return a json:
+
+```
+{"contacts": [
+  {"id": 24, "name": "Teste1", "phone": "719982837"},
+  {"id": 25, "name": "Teste2", "phone": "7199828387"}
+]}
+```
+
+### Store a contact
+
+Description:
+
+Store a contact in the database
+
+Request:
+
+```
+Post /contact/insert
+```
+
+Request:
+
+```
+{
+  "name": "Contact1",
+  "phone": "7181271827"
+}
+```
+
+Responses:
+
+```
+200 - OK.
+401 - Bad Request.
+500 - Server Error.
+```
+
+If everything goes right the server will return a json:
+
+```
+{'message': 'Contact successfully registered'}
+```
+
+### Update a contact
+
+Description:
+
+Update a contact in the database
+
+Request:
+
+```
+Post /contact/update/:id
+```
+
+Request:
+
+```
+{
+  "name": "Contact2",
+  "phone": "7181271827"
+}
+```
+
+Responses:
+
+```
+200 - OK.
+401 - Bad Request.
+404 - Not Found.
+500 - Server Error.
+```
+
+If everything goes right the server will return a json:
+
+```
+{'message': 'Successfully updated'}
+```
+
+### Delete a contact
+
+Description:
+
+Delete a contact by id
+
+Request:
+
+```
+Get /contact/delete/:id
+```
+
+Responses:
+
+```
+200 - OK.
+401 - Bad Request.
+404 - Not Found.
+500 - Server Error.
+```
+
+If everything goes right the server will return a json:
+
+```
+{'message': 'Deleted user'}
+```
+
