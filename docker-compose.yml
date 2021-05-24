@@ -8,10 +8,11 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: SynysterGates1
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: horus
+  
   api:
-    build: .
+    build: ./
     environment:
       - FLASK_ENV=development
       - FLASK_APP=server.py
@@ -20,4 +21,6 @@ services:
     ports:
       - 5000:5000
     depends_on:
+      - db
+    links:
       - db

@@ -13,4 +13,4 @@ CREATE TABLE `contacts` (
   `status` enum('0','1') NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-INSERT INTO contacts(id,name,phone,status) VALUES(1,'Renan Almeida','71999674175','0'),(15,'Renan','71999999999','0'),(20,'Renan Almeida','9999','1'),(21,'Renan Almeida','99999','1');
+INSERT INTO contacts(id,name,phone,status) VALUES (1,'Rafael','71999674175','0'),(2,'Levi','71999999999','0');
