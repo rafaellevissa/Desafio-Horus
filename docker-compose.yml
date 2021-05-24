@@ -1,0 +1,23 @@
+version: "3.5"
+
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: SynysterGates1
+      MYSQL_DATABASE: horus
+  api:
+    build: .
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=server.py
+    volumes:
+      - ./:/app
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
